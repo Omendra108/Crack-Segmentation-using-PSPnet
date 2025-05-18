@@ -59,27 +59,9 @@ We successfully developed a crack segmentation model based on the PSPNet archite
 1) The model demonstrates high recall, effectively identifying the majority of crack pixels 
 with minimal false negatives.  
 2) It generalizes well across different types of crack patterns, indicating strong versatility.  
-3) The model is highly sensitive to fine-grained crack structures, enabling the detection of even subtle crack formations.
-The crack segmentation network build in this project is baised and sensitive towards crack pixels, where it predicts almost all true crack pixels but also labels some background pixels as crack pixels.
+3) The model is highly sensitive to fine-grained crack structures, enabling the detection of even subtle crack formations.  
+The crack segmentation network build in this project is baised and sensitive towards crack pixels, where it predicts almost all true crack pixels but also labels some background pixels as crack pixels.  
 With certain refinement and fine-tuning we can improve models performance and so, therefore we are providing the source code publicly for any person to use and produce a better model than us ✌️
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 ## REFERENCES
 [1] Y. Kondo and N. Ukita, "Joint Learning of Blind Super-Resolution and Crack Segmentation for Realistic Degraded Images," in IEEE Transactions on Instrumentation and Measurement, vol. 73, pp. 1-16, 2024, Art no. 5013816, doi: 10.1109/TIM.2024.3374293.  
