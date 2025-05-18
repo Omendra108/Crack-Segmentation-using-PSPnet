@@ -21,6 +21,47 @@ The dataset consists of real world crack images of wall cracks and pavement crac
 
 ## CRACK SEGMENTATION NETWORK
 The research paper has given comparative data on the performance of multiple semantic segmentation architectures like U-net[2](https://arxiv.org/abs/1505.04597), PSPnet[3](https://ieeexplore.ieee.org/document/8100143), CrackFormer[4](https://ieeexplore.ieee.org/document/9711107), HRnet+OCR[5](https://arxiv.org/abs/1909.11065).  
+After the quantative comparision of different model's mentioned in Table II in the research paper[1] we choose PSPnet as the model architecture as it has the highest IoU score.  
+PSPNet(Pyramid Scene Parsing network) is a deep learning model used for semantic segmentation(2 class segmentation), where each pixel in an image is classified into a category (e.g., road, crack, wall, etc.). It’s especially known for capturing global context using its pyramid pooling module (PPM).  
+Following are the components of the PSPnet based crack segmentation network:  
+1. Encoder: The encoder serves as a feature extractor for the input image. In our implementation, we use ResNet-18, pre-trained on the ImageNet dataset, as the backbone for the encoder.   
+2. PPM: Pyramid Pooling Module helps the network understand the local and global details of the image. PPM applies pooling at different scales (1x1,2x2,...6x6 etc) and forms layers of low resolution feature maps. 
+  
+3. Decoder: After PPM, the layers of the feature map are upsampled to the size of the input image and concatenated to form a segmentation mask of the input image.  
+4. Output: The convolution layers are converted to segmentation mask using sigmoid activation function.The segmentation mask is a probability map, where each pixel has a probability score, which tells how likely the pixel is belonging to the crack pixel class.Thresholding function is applied on the segmentation mask to convert the probability score map to binary mask.
+
+![image](https://github.com/user-attachments/assets/7c4f4386-328c-465e-9ad9-a3845a51c04c)  
+
+## LOSS FUNCTION
+Loss functions are mathematical tool for assisting the model to learn on the dataset by reducing the errors between ground truth and predicted value. In our project we have used a combination of BC(Boundary Combo)) loss function, which itself is a weighted combination of Boundary Loss, GDice(Generalised Dice) loss and Weighted Cross Entropy loss(WCE). Boundary loss function ensures that the boundary of fine cracks is highlighted properly. Ensures Crack contours are well defined.GDice loss ensures the cracks are segmented properly. WCE loss Gives more weight to fine crack pixels compared to the background pixels. In the BC loss function 𝜶 and 𝜸 are the hyperparameters, where 𝜸=0.5 and 𝜶 is dynamically calculated.
+
+![image](https://github.com/user-attachments/assets/cf907ce7-ed26-42ef-b1be-8ada9f472bcc)  
+
+## TRAINING
+The model was trained for 50 epochs, during which both training and validation losses were monitored at each epoch to evaluate performance and track generalization. To mitigate overfitting and ensure optimal 
+model selection, a checkpointing strategy was employed wherein the model state was saved only if the current epoch yielded a lower validation loss than all previous epochs. The final model with the lowest 
+recorded validation loss was saved to Google Drive as **“PSPnet_best_model.pth”**.
+
+![image](https://github.com/user-attachments/assets/abddbdae-4832-4989-81a2-e2efd11294c7)  
+
+## MODEL EVALUATION
+For model evaluation, a randomly selected crack image from the test dataset was passed through the trained network to generate its corresponding predicted segmentation mask. To qualitatively assess the model’s performance, the input image, ground truth mask, and predicted mask were visualized side by side. For quantitative analysis, a pixel-level confusion matrix was computed and plotted, enabling detailed assessment of true positives, false positives, false negatives, and true negatives—consistent with the pixel-wise nature of semantic segmentation in crack detection. 
+
+![image](https://github.com/user-attachments/assets/bbdba5f4-ccd7-42b8-90bf-05e64390358c)  
+![image](https://github.com/user-attachments/assets/37461aa1-ff0f-4a14-848a-b1a08f2e2a3a)  
+
+To quantitatively assess the model's performance, segmentation masks were predicted for all test images. For each prediction IoU, Precision, Accuracy, Recall, and F1 Score were computed. The final performance of the model was determined by averaging these metrics across the entire test set, providing a comprehensive evaluation of its segmentation capability. 
+
+![image](https://github.com/user-attachments/assets/fcadf662-906f-42a2-8900-cdbe105a3153)  
+
+
+
+
+
+
+
+
+
 
 
 
