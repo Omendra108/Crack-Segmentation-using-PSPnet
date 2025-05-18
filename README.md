@@ -54,6 +54,15 @@ To quantitatively assess the model's performance, segmentation masks were predic
 
 ![image](https://github.com/user-attachments/assets/fcadf662-906f-42a2-8900-cdbe105a3153)  
 
+## CONCLUSION 
+We successfully developed a crack segmentation model based on the PSPNet architecture, capable of performing pixel-wise semantic segmentation. Based on the quantitative evaluation metrics, the following observations can be made:  
+1) The model demonstrates high recall, effectively identifying the majority of crack pixels 
+with minimal false negatives.  
+2) It generalizes well across different types of crack patterns, indicating strong versatility.  
+3) The model is highly sensitive to fine-grained crack structures, enabling the detection of even subtle crack formations.
+The crack segmentation network build in this project is baised and sensitive towards crack pixels, where it predicts almost all true crack pixels but also labels some background pixels as crack pixels.
+With certain refinement and fine-tuning we can improve models performance and so, therefore we are providing the source code publicly for any person to use and produce a better model than us ✌️
+
 
 
 
