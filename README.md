@@ -20,7 +20,7 @@ The dataset plays a critical role in developing an effective neural network. As 
 The dataset consists of real world crack images of wall cracks and pavement cracks at different abstraction levels for making the model more robust and versatile. 
 
 ## CRACK SEGMENTATION NETWORK
-The research paper has given comparative data on the performance of multiple semantic segmentation architectures like U-net[2](https://arxiv.org/abs/1505.04597), PSPnet[3](https://ieeexplore.ieee.org/document/8100143), CrackFormer[4](https://ieeexplore.ieee.org/document/9711107), HRnet+OCR[4](https://arxiv.org/abs/1909.11065).  
+The research paper has given comparative data on the performance of multiple semantic segmentation architectures like U-net[2](https://arxiv.org/abs/1505.04597), PSPnet[3](https://ieeexplore.ieee.org/document/8100143), CrackFormer[4](https://ieeexplore.ieee.org/document/9711107), HRnet+OCR[5](https://arxiv.org/abs/1909.11065).  
 
 
 
@@ -32,10 +32,11 @@ The research paper has given comparative data on the performance of multiple sem
 
 
 
-[1] Y. Kondo and N. Ukita, "Joint Learning of Blind Super-Resolution and Crack Segmentation for Realistic Degraded Images," in IEEE Transactions on Instrumentation and Measurement, vol. 73, pp. 1-16, 2024, Art no. 5013816, doi: 10.1109/TIM.2024.3374293.
-[2] Ronneberger, O., Fischer, P., Brox, T. (2015). U-Net: Convolutional Networks for Biomedical Image Segmentation. In: Navab, N., Hornegger, J., Wells, W., Frangi, A. (eds) Medical Image Computing and Computer-Assisted Intervention – MICCAI 2015. MICCAI 2015. Lecture Notes in Computer Science(), vol 9351.
-[3] H. Zhao, J. Shi, X. Qi, X. Wang and J. Jia, "Pyramid Scene Parsing Network," 2017 IEEE Conference on Computer Vision and Pattern Recognition (CVPR), Honolulu, HI, USA, 2017, pp. 6230-6239, doi: 10.1109/CVPR.2017.660.
-[4] Yuan, Yuhui, et al. "Segmentation Transformer: Object-Contextual Representations for Semantic Segmentation. 2021." arXiv preprint arXiv:1909.11065 (1909).
+[1] Y. Kondo and N. Ukita, "Joint Learning of Blind Super-Resolution and Crack Segmentation for Realistic Degraded Images," in IEEE Transactions on Instrumentation and Measurement, vol. 73, pp. 1-16, 2024, Art no. 5013816, doi: 10.1109/TIM.2024.3374293.  
+[2] Ronneberger, O., Fischer, P., Brox, T. (2015). U-Net: Convolutional Networks for Biomedical Image Segmentation. In: Navab, N., Hornegger, J., Wells, W., Frangi, A. (eds) Medical Image Computing and Computer-Assisted Intervention – MICCAI 2015. MICCAI 2015. Lecture Notes in Computer Science(), vol 9351.  
+[3] H. Zhao, J. Shi, X. Qi, X. Wang and J. Jia, "Pyramid Scene Parsing Network," 2017 IEEE Conference on Computer Vision and Pattern Recognition (CVPR), Honolulu, HI, USA, 2017, pp. 6230-6239, doi: 10.1109/CVPR.2017.660.  
+[4] H. Liu, X. Miao, C. Mertz, C. Xu and H. Kong, "CrackFormer: Transformer Network for Fine-Grained Crack Detection," 2021 IEEE/CVF International Conference on Computer Vision (ICCV), Montreal, QC, Canada, 2021, pp. 3763-3772, doi: 10.1109/ICCV48922.2021.00376.  
+[5] Yuan, Yuhui, et al. "Segmentation Transformer: Object-Contextual Representations for Semantic Segmentation. 2021." arXiv preprint arXiv:1909.11065 (1909).  
 
 
 
